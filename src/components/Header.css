@@ -1,0 +1,15 @@
+.title {
+    font-size: 3em;
+    margin-top: 16px;
+}
+
+.title-link {
+    color: black;
+}
+.title-link:hover {
+    color: black;
+}
+
+.lead {
+    font-size: 3em;
+}

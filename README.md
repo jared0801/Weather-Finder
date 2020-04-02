@@ -1,4 +1,10 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Weather Finder
+By Jared Jacobson
+
+- To get started, an API key from https://openweathermap.org/ is required. You will need to sign up, go to your profile, and then go to API keys.
+- Create a .env file in the project root and paste: `REACT_APP_API_KEY=` followed by your API key.
+- Make sure to `yarn install` or `npm install`
+- Run in development mode with: `yarn start` or `npm run start`
 
 ## Available Scripts
 

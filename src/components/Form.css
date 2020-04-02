@@ -1,0 +1,8 @@
+input.form-control {
+    background-color: rgba(0,0,0,0.1);
+    padding: 5px;
+}
+
+form.form-inline {
+    width: 100%;
+}
