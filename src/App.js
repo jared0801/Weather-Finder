@@ -22,13 +22,13 @@ class App extends React.Component {
             submitted: false,
             bg: undefined,
             weatherBgs: {
-                Thunderstorm: "../assets/lightning.jpg",
-                Drizzle: "../assets/clouds.jpg",
-                Rain: "../assets/clouds.jpg",
-                Snow: "../assets/clouds.jpg",
-                Atmosphere: "../assets/clouds.jpg",
-                Clear: "../assets/sun2.jpg",
-                Clouds: "../assets/clouds.jpg"
+                Thunderstorm: "assets/lightning.jpg",
+                Drizzle: "assets/clouds.jpg",
+                Rain: "assets/clouds.jpg",
+                Snow: "assets/clouds.jpg",
+                Atmosphere: "assets/clouds.jpg",
+                Clear: "assets/sun2.jpg",
+                Clouds: "assets/clouds.jpg"
             }
         }
         this.state.bg = this.state.weatherBgs.Clear;
@@ -82,7 +82,7 @@ class App extends React.Component {
         e.preventDefault();
         let city = e.target.elements.city.value;
         let country = e.target.elements.country.value;
-        const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`);
+        const api_call = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}&units=imperial`);
         const data = await api_call.json();
         this.setState({submitted: true});
         if(data && data.cod === 200) {
@@ -127,7 +127,7 @@ class App extends React.Component {
                             />
         }
         return (
-            <div className="App" style={this.state.bg ? {backgroundImage: `url(${this.state.bg})` } : {}}>
+            <div className="App" style={this.state.bg ? {backgroundImage: `url(${process.env.PUBLIC_URL}/${this.state.bg})` } : {}}>
                 <Header />
                 <Form onGetWeather={this.getWeather} />
                 {weatherOrError}
